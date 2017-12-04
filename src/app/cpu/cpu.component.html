@@ -1,0 +1,21 @@
+<h2>CPU</h2>
+<ul class="cpu">
+  <li *ngFor="let cpu of cpu"
+    ng-show="cpu.socket==motherboards.socket"
+    ng-hide="cpu.socket!==motherboards.socket"
+    [class.selected]="cpu === selectedCPU"
+    (click)="onSelect(cpu)">
+    <span class="badge">{{cpu.name}}</span>{{cpu.price}}€
+  </li>
+</ul>
+
+<div *ngIf="selectedCPU">
+
+  <h2>{{ selectedCPU.name | uppercase }} Details</h2>
+  <div><span>Socket: </span>{{selectedCPU.socket}}</div>
+  <div><span>Core: </span>{{selectedCPU.core}} </div>
+  <div><span>Speed: </span>{{selectedCPU.speed}} MHz</div>
+  <div><span>Power: </span>{{selectedCPU.power}} W</div>
+  <div><span>Price: </span>{{selectedCPU.price}}€</div>
+
+</div>

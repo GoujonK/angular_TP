@@ -1,0 +1,19 @@
+<h2>Motherboards</h2>
+<ul class="motherboards">
+  <li *ngFor="let motherboards of motherboards"
+    [class.selected]="motherboards === selectedMB"
+    (click)="onSelect(motherboards)">
+    <span class="badge">{{motherboards.name}}</span>{{motherboards.price}}€
+  </li>
+</ul>
+
+<div *ngIf="selectedMB">
+
+  <h2>{{ selectedMB.name | uppercase }} Details</h2>
+  <div><span>Socket: </span>{{selectedMB.socket}}</div>
+  <div><span>Form factor: </span>{{selectedMB.form_factor}}</div>
+  <div><span>RAM slots: </span>{{selectedMB.ram_slot}}</div>
+  <div><span>RAM max: </span>{{selectedMB.max_ram}}</div>
+  <div><span>Price: </span>{{selectedMB.price}}€</div>
+
+</div>
