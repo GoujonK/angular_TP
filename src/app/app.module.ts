@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
+import { SocketService } from './socket.service';
 
 import { AppComponent } from './app.component';
 import { MotherboardComponent } from './motherboards/motherboards.component';
@@ -23,7 +24,7 @@ import { GpuComponent } from './gpu/gpu.component';
     BrowserModule,
     FormsModule
   ],
-  providers: [],
+  providers: [SocketService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Motherboard } from '../motherboards';
 import { mb } from '../mock-mb';
+import { SocketService } from '../socket.service';
 
 @Component({
   selector: 'app-motherboards',
@@ -13,14 +14,19 @@ export class MotherboardComponent implements OnInit {
 
   selectedMB: Motherboard;
 
-  constructor() {
+  constructor(private socketService: SocketService) {
     this.motherboards = mb;
   }
 
   ngOnInit() {
+    //this.getMotherboards();
   }
 
   onSelect(motherboards: Motherboard): void{
     this.selectedMB = motherboards;
   }
+
+  /*getMotherboards():void{
+    this.motherboards = this.socketService.getMotherboards();
+  }*/
 }
