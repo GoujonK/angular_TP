@@ -1,3 +1,18 @@
-<p>
-  ram works!
-</p>
+<h2>RAM</h2>
+<ul class="ram">
+  <li *ngFor="let ram of ram"
+    [class.selected]="ram === selectedRAM"
+    (click)="onSelect(ram)">
+    <span class="badge">{{ram.name}}</span>{{ram.price}}€
+  </li>
+</ul>
+
+<div *ngIf="selectedRAM">
+
+  <h2>{{ selectedRAM.name | uppercase }} Details</h2>
+  <div><span>Speed: </span>{{selectedRAM.speed}}</div>
+  <div><span>Type: </span>{{selectedRAM.type}} </div>
+  <div><span>Module: </span>{{selectedRAM.module}}</div>
+  <div><span>Price: </span>{{selectedRAM.price}}€</div>
+
+</div>

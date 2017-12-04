@@ -1,3 +1,18 @@
-<p>
-  storage works!
-</p>
+<h2>Storage</h2>
+<ul class="storage">
+  <li *ngFor="let storage of hdd"
+    [class.selected]="storage === selectedHDD"
+    (click)="onSelect(storage)">
+    <span class="badge">{{storage.name}}</span>{{storage.price}}€
+  </li>
+</ul>
+
+<div *ngIf="selectedHDD">
+
+  <h2>{{ selectedHDD.name | uppercase }} Details</h2>
+  <div><span>Form: </span>{{selectedHDD.form}}</div>
+  <div><span>Type: </span>{{selectedHDD.type}}</div>
+  <div><span>Capacity: </span>{{selectedHDD.cap}}</div>
+  <div><span>Price: </span>{{selectedHDD.price}}€</div>
+
+</div>

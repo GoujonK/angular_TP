@@ -1,5 +1,23 @@
 app-cpu {
   position: absolute;
   top: 96px;
-  left: 300px;
+  left: 270px;
+}
+
+app-gpu {
+  position: absolute;
+  top: 96px;
+  left: 505px;
+}
+
+app-ram {
+  position: absolute;
+  top: 96px;
+  left: 780px;
+}
+
+app-storage {
+  position: absolute;
+  top: 96px;
+  left: 1025px;
 }

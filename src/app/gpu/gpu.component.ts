@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Gpu } from '../gpu';
+import { gpu } from '../mock-gpu';
 
 @Component({
   selector: 'app-gpu',
@@ -7,9 +9,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class GpuComponent implements OnInit {
 
-  constructor() { }
+  gpu: Gpu[];
+
+  selectedGPU: Gpu;
+
+  constructor() {
+    this.gpu = gpu;
+  }
 
   ngOnInit() {
   }
 
+  onSelect(gpu: Gpu): void{
+    this.selectedGPU = gpu;
+  }
 }

@@ -1,3 +1,18 @@
-<p>
-  gpu works!
-</p>
+<h2>GPU</h2>
+<ul class="gpu">
+  <li *ngFor="let gpu of gpu"
+    [class.selected]="gpu === selectedGPU"
+    (click)="onSelect(gpu)">
+    <span class="badge">{{gpu.name}}</span>{{gpu.price}}€
+  </li>
+</ul>
+
+<div *ngIf="selectedGPU">
+
+    <h2>{{ selectedGPU.name | uppercase }} Details</h2>
+    <div><span>Chipset: </span>{{selectedGPU.chipset}}</div>
+    <div><span>Memory: </span>{{selectedGPU.memory}} MHz</div>
+    <div><span>Core clock: </span>{{selectedGPU.core_clock}} </div>
+    <div><span>Price: </span>{{selectedGPU.price}}€</div>
+
+  </div>
