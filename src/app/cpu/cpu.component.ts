@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Cpu } from '../cpu';
 import { cpu } from '../mock-cpu';
+import { SocketService } from '../socket.service';
 
 @Component({
   selector: 'app-cpu',

@@ -1,13 +1,13 @@
 <h2>CPU</h2>
 <ul class="cpu">
   <li *ngFor="let cpu of cpu"
-    ng-show="cpu.socket==motherboards.socket"
-    ng-hide="cpu.socket!==motherboards.socket"
+    NgIf="cpu.socket!==mb.socket"
     [class.selected]="cpu === selectedCPU"
     (click)="onSelect(cpu)">
     <span class="badge">{{cpu.name}}</span>{{cpu.price}}€
   </li>
 </ul>
+<!--{{selectedMB.socket}}-->
 
 <div *ngIf="selectedCPU">
 

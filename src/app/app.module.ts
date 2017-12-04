@@ -8,6 +8,7 @@ import { CpuComponent } from './cpu/cpu.component';
 import { RamComponent } from './ram/ram.component';
 import { StorageComponent } from './storage/storage.component';
 import { GpuComponent } from './gpu/gpu.component';
+import { SocketService } from './socket.service';
 
 
 @NgModule({
@@ -23,7 +24,7 @@ import { GpuComponent } from './gpu/gpu.component';
     BrowserModule,
     FormsModule
   ],
-  providers: [],
+  providers: [SocketService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
